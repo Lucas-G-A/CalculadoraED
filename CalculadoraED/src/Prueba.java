@@ -16,7 +16,7 @@ public class Prueba extends JFrame{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        NewJFrame ventana = new NewJFrame();
+        VistaCalc ventana = new VistaCalc();
         ventana.setVisible(true);
     }
     
