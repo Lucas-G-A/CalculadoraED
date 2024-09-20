@@ -505,10 +505,17 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void resActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resActionPerformed
         String input = sb.toString();
+        
         sb.delete(0, 1000);
-        sb.append(Calcular.calcular(Calcular.pasarALista(input))+"");
         ultNum.delete(0, 1000);
-        ultNum.append(sb.toString());
+        if(PruebasValidas.operadoresJuntos(input)){
+            sb.append(Calcular.calcular(Calcular.pasarALista(input))+"");
+            ultNum.append(sb.toString());
+        }
+        else{
+            sb.append("Error");
+        }
+        ultNum.delete(0, 1000);
         //pantalla.setText(Calcular.calcular(Calcular.pasarALista(input))+"");
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_resActionPerformed
