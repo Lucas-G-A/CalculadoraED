@@ -16,6 +16,7 @@ public class NewJFrame extends javax.swing.JFrame {
         initComponents();
     }
     StringBuilder sb = new StringBuilder();
+    private StringBuilder ultNum = new StringBuilder();
     
 
     /**
@@ -332,138 +333,160 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void divisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisionActionPerformed
         sb.append("/");
+        ultNum.delete(0, 1000);
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_divisionActionPerformed
 
     private void numCuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numCuatroActionPerformed
         sb.append("4");
+        ultNum.append("4");
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_numCuatroActionPerformed
 
     private void delAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delAllActionPerformed
         sb.delete(0, sb.length());
+        ultNum.delete(0, 1000);
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_delAllActionPerformed
 
     private void potenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potenciaActionPerformed
         sb.append("^(");
+        ultNum.delete(0, 1000);
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_potenciaActionPerformed
 
     private void numTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numTresActionPerformed
         sb.append("3");
+        ultNum.append("3");
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_numTresActionPerformed
 
     private void parDerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parDerActionPerformed
         sb.append(")");
+        ultNum.delete(0, 1000);
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_parDerActionPerformed
 
     private void numDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numDosActionPerformed
         sb.append("2");
+        ultNum.append("2");
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_numDosActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         sb.deleteCharAt(sb.length() - 1);
+        char c = evt.toString().charAt(0);
+        if(c!='(' && c!='+' && c!='-' && c!='*' && c!='/' && c!='^' && c!=')'){
+            ultNum.deleteCharAt(ultNum.length()-1);
+        }
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_deleteActionPerformed
 
     private void parIzqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parIzqActionPerformed
         sb.append("(");
+        ultNum.delete(0, 1000);
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_parIzqActionPerformed
 
     private void numUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numUnoActionPerformed
         sb.append("1");
+        ultNum.append("1");
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_numUnoActionPerformed
 
     private void numCeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numCeroActionPerformed
         sb.append("0");
+        ultNum.append("0");
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_numCeroActionPerformed
 
     private void numNueveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numNueveActionPerformed
         sb.append("9");
+        ultNum.append("9");
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_numNueveActionPerformed
 
     private void numOchoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numOchoActionPerformed
         sb.append("8");
+        ultNum.append("8");
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_numOchoActionPerformed
 
     private void cambioSIgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambioSIgActionPerformed
-        PilaA aux = new PilaA();
-        char check = sb.charAt(sb.length() - 1);
-        int contador = 0;
-        while (check != '+' && check != '-' && check != '÷' && check != '*' && check != '\u0000' ){
-            aux.push(sb.charAt(sb.length() - 1));
-            sb.deleteCharAt(sb.length() - 1);
-            check = sb.charAt(sb.length() - 1);
-            contador++;
-            if (contador == sb.length()){
-                check = '\u0000';
-                aux.push(sb.charAt(sb.length() - 1));
-                sb.deleteCharAt(sb.length() - 1);
-                contador++;
-            }
+        PilaA<Character> aux = new PilaA<Character>();
+        String num = ultNum.toString();
+        
+        sb.delete(ultNum.length(), sb.length());
+        System.out.println(num);
+        for(int i=num.length()-1; i>0;i++){
+            System.out.println(num.charAt(i));
+            aux.push(num.charAt(i)); //Checar esto
         }
-       
-        sb.append("(-");
-        for (int i=0; i<contador; i++){
-            sb.append(aux.peek());
-            aux.pop();
+        aux.push('(');
+        aux.push('-');
+        
+        ultNum.delete(0, 1000);
+        while(!aux.isEmpty()){
+           ultNum.append(aux.pop());
         }
-        sb.append(")");
+        ultNum.append(')');
+        sb.append(ultNum.toString());
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_cambioSIgActionPerformed
 
     private void numSieteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numSieteActionPerformed
         sb.append("7");
+        ultNum.append("7");
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_numSieteActionPerformed
 
     private void sumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumaActionPerformed
         sb.append("+");
+        ultNum.delete(0, 1000);
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_sumaActionPerformed
 
     private void restaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaActionPerformed
         sb.append("-");
+        ultNum.delete(0, 1000);
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_restaActionPerformed
 
     private void multiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiActionPerformed
         sb.append("*");
+        ultNum.delete(0, 1000);
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_multiActionPerformed
 
     private void decimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decimalActionPerformed
         sb.append(".");
+        ultNum.append(".");
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_decimalActionPerformed
 
     private void numSeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numSeisActionPerformed
         sb.append("6");
+        ultNum.append("6");
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_numSeisActionPerformed
 
     private void numCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numCincoActionPerformed
         sb.append("5");
+        ultNum.append("5");
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_numCincoActionPerformed
 
     private void numCincoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numCincoKeyPressed
         // TODO add your handling code here:
+        //ESTO QUE ES??
     }//GEN-LAST:event_numCincoKeyPressed
 
     private void resActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resActionPerformed
         String input = sb.toString();
         sb.delete(0, 1000);
         sb.append(Calcular.calcular(Calcular.pasarALista(input))+"");
+        ultNum.delete(0, 1000);
+        ultNum.append(sb.toString());
         //pantalla.setText(Calcular.calcular(Calcular.pasarALista(input))+"");
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_resActionPerformed
