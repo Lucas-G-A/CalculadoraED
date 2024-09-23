@@ -431,16 +431,11 @@ public class VistaCalc extends javax.swing.JFrame {
         String num = ultNum.toString();
         
         sb.delete(sb.length()-ultNum.length(), sb.length());
-        System.out.println(sb.toString());
-        //AQUI BIEN
-        System.out.println(num);
         for(int i=num.length()-1; i>=0;i--){
-            System.out.println(num.charAt(i));
-            aux.push(num.charAt(i)); //Checar esto
+            aux.push(num.charAt(i)); 
         }
         aux.push('-');
         aux.push('(');
-        
         ultNum.delete(0, 1000);
         while(!aux.isEmpty()){
            ultNum.append(aux.pop());
@@ -515,8 +510,11 @@ public class VistaCalc extends javax.swing.JFrame {
         else{
             sb.append("Error");
         }
-        ultNum.delete(0, 1000);
         //pantalla.setText(Calcular.calcular(Calcular.pasarALista(input))+"");
+        if(sb.toString().equals("Infinity")){
+            sb.delete(0, 1000);
+            sb.append("Error");
+        }
         pantalla.setText(sb.toString());
     }//GEN-LAST:event_resActionPerformed
 
