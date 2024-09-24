@@ -64,9 +64,12 @@ public class PruebasValidas {
      * </ul>
      */
 	public static boolean parentesisNoConsecutivos(String cadena) {
-	    for (int i = 0; i < cadena.length() - 1; i++) {
-	        char actual = cadena.charAt(i);
-	        char siguiente = cadena.charAt(i + 1);
+	    char actual;
+            char siguiente;
+            
+            for (int i = 0; i < cadena.length() - 1; i++) {
+	        actual = cadena.charAt(i);
+	        siguiente = cadena.charAt(i + 1);
 	        if (actual == '(' && siguiente == ')' || actual == ')' && siguiente == '(') {
 	            return false; 
 	        }
@@ -83,24 +86,26 @@ public class PruebasValidas {
 	public static boolean verificarInicioYFin(String cadena) {
             char primero = cadena.charAt(0);
             char ultimo = cadena.charAt(cadena.length()-1);
-		if(esOperador(primero))
-                    return false;
-		if(esOperador(ultimo))
-                    return false;
-                if (primero == '(' && cadena.length() > 1) {
-		    char segundo = cadena.charAt(1);
-		    if (segundo == '+'||segundo == '*'||segundo =='/'||segundo == '^') {
-		        return false; 
-		    }
+            char segundo;
+            char penultimo;
+            
+            if(esOperador(primero))
+                return false;
+            if(esOperador(ultimo))
+                return false;
+            if (primero == '(' && cadena.length() > 1) {
+		segundo = cadena.charAt(1);
+		if (segundo == '+'||segundo == '*'||segundo =='/'||segundo == '^') {
+		    return false; 
 		}
-                if (ultimo == ')' && cadena.length() > 1) {
-		    char penultimo = cadena.charAt(cadena.length()-2);
-		    if (esOperador(penultimo)) {
-		        return false; 
-		    }
+            }
+            if (ultimo == ')' && cadena.length() > 1) {
+		penultimo = cadena.charAt(cadena.length()-2);
+		if (esOperador(penultimo)) {
+		    return false; 
 		}
-            return true;
-			
+            }
+        return true;		
 	}
      /**
      * @param cadena de la operación
