@@ -90,7 +90,7 @@ public class Calcular {
      * </ul>
      */
     
-    public static int compararOp(char c1, char c2){
+    private static int compararOp(char c1, char c2){
         int res,ci1, ci2;
         
         ci1=asignarNumAChar(c1);
@@ -120,7 +120,7 @@ public class Calcular {
      * <li> 3 para exponente
      * </ul>
      */
-    public static int asignarNumAChar(char c){
+    private static int asignarNumAChar(char c){
         int res;
         
         if(c=='('){

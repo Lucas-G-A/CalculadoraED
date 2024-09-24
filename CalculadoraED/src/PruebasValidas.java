@@ -17,7 +17,7 @@ public class PruebasValidas {
      * <li> false si no lo es
      * </ul>
      */
-	public static boolean esOperador(char c) {
+	private static boolean esOperador(char c) {
 	    return c == '+' || c == '-' || c == '*' || c == '/' || c == '^';
 	}
      /**
@@ -27,7 +27,7 @@ public class PruebasValidas {
      * <li>false si no es parentesis
      * </ul>
      */
-	public static boolean esParentesis(char c) {
+	private static boolean esParentesis(char c) {
 	    return c == '(' || c == ')'; 
 	}
 	
@@ -38,7 +38,7 @@ public class PruebasValidas {
      * <li>false si sus paréntesis no están balanceados
      * </ul>
      */
-	public static boolean parentesisBalanceados(String cadena) {
+	private static boolean parentesisBalanceados(String cadena) {
             PilaA<Character> pila = new PilaA<>();
             if(cadena.length()>0) {
 		for(int i=0; i<cadena.length(); i++) {
@@ -63,7 +63,7 @@ public class PruebasValidas {
      * <li>false si tiene paréntesis consecutivos
      * </ul>
      */
-	public static boolean parentesisNoConsecutivos(String cadena) {
+	private static boolean parentesisNoConsecutivos(String cadena) {
 	    char actual;
             char siguiente;
             
