@@ -382,13 +382,15 @@ public class VistaCalc extends javax.swing.JFrame {
     }//GEN-LAST:event_numDosActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-        sb.deleteCharAt(sb.length() - 1);
-        char c = evt.toString().charAt(0);
-        System.out.println(c);
-        if(num){
-            ultNum.deleteCharAt(ultNum.length()-1);
-        }
-        pantalla.setText(sb.toString());
+        if(!sb.isEmpty()){
+            sb.deleteCharAt(sb.length() - 1);
+            char c = evt.toString().charAt(0);
+            System.out.println(c);
+            if(num){
+                ultNum.deleteCharAt(ultNum.length()-1);
+            }
+            pantalla.setText(sb.toString());
+        }   
     }//GEN-LAST:event_deleteActionPerformed
 
     private void parIzqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parIzqActionPerformed

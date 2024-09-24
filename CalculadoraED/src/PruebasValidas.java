@@ -1,14 +1,43 @@
+/**
+ *
+ * @author eliasKalby
+ */
 public class PruebasValidas {
-	
+	/**
+        * <pre> 
+        * Esta clase verifica que la expresión que se le ha dado a la calculadora
+        * sea válida y se pueda evaluar, checando muchos errores posibles
+        * </pre> 
+        */
+    
+    /**
+     * @param char de un elemento en el String para verificar si es un operador
+     * @return boolean <ul> 
+     * <li> true si es operador 
+     * <li> false si no lo es
+     * </ul>
+     */
 	public static boolean esOperador(char c) {
 	    return c == '+' || c == '-' || c == '*' || c == '/' || c == '^';
 	}
-	
+     /**
+     * @param char de un elemento en el String para verificar si es un paréntesis
+     * @return boolean <ul>
+     * <li>true si es paréntesis 
+     * <li>false si no es parentesis
+     * </ul>
+     */
 	public static boolean esParentesis(char c) {
 	    return c == '(' || c == ')'; 
 	}
 	
-
+     /**
+     * @param cadena de la operación
+     * @return Boolean <ul>
+     * <li>true si sus parentesis están balanceados 
+     * <li>false si sus paréntesis no están balanceados
+     * </ul>
+     */
 	public static boolean parentesisBalanceados(String cadena) {
             PilaA<Character> pila = new PilaA<>();
             if(cadena.length()>0) {
@@ -27,7 +56,13 @@ public class PruebasValidas {
             }
 		return pila.isEmpty();
 	}
-	
+     /**
+     * @param cadena de la operación
+     * @return Boolean <ul>
+     * <li>true si no tiene paréntesis consecutivos 
+     * <li>false si tiene paréntesis consecutivos
+     * </ul>
+     */
 	public static boolean parentesisNoConsecutivos(String cadena) {
 	    for (int i = 0; i < cadena.length() - 1; i++) {
 	        char actual = cadena.charAt(i);
@@ -38,7 +73,13 @@ public class PruebasValidas {
 	    }
 	    return true; 
 	}
-	
+     /**
+     * @param cadena de la operación
+     * @return Boolean <ul>
+     * <li>true si la operación no empieza ni acaba con un operador
+     * <li>false si la operación empieza o acaba con un operador
+     * </ul>
+     */
 	public static boolean verificarInicioYFin(String cadena) {
             char primero = cadena.charAt(0);
             char ultimo = cadena.charAt(cadena.length()-1);
@@ -61,7 +102,13 @@ public class PruebasValidas {
             return true;
 			
 	}
-	
+     /**
+     * @param cadena de la operación
+     * @return Boolean <ul>
+     * <li>True si todos los métodos anteriores regresan true y no hay operadores consecutivos 
+     * <li>false si algun método anterior regresa false o si hay operadores juntos el la expresión
+     * </ul>
+     */
 	public static boolean operadoresJuntos(String cadena) {
             char actual, siguiente, siguienteX2;
             if(!parentesisBalanceados(cadena) || !parentesisNoConsecutivos(cadena) || !verificarInicioYFin(cadena)) {
