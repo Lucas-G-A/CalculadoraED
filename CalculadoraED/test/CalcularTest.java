@@ -41,13 +41,21 @@ public class CalcularTest {
      */
     @Test
     public void testPasarALista() {
+        ArrayList<String> exp=new ArrayList<String>();
+        
+        exp.add("8");
+        exp.add("5.9"); 
+        exp.add("+");
+        exp.add("9");
+        exp.add("*");
+        exp.add("2");
+        exp.add("/");
         System.out.println("pasarALista");
-        String cad = "";
-        ArrayList<String> expResult = null;
+        String cad = "(8+5.9)*9/2";
+        ArrayList<String> expResult = exp;
         ArrayList<String> result = Calcular.pasarALista(cad);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // Test passed
     }
 
     /**
@@ -55,13 +63,23 @@ public class CalcularTest {
      */
     @Test
     public void testCalcular() {
+        ArrayList<String> operacion=new ArrayList<String>();
+        
+        operacion.add("-8");
+        operacion.add("77"); 
+        operacion.add("-");
+        operacion.add("3");
+        operacion.add("*");
+        operacion.add("5");
+        operacion.add("/");
+        operacion.add("3");
+        operacion.add("^");
         System.out.println("calcular");
-        ArrayList<String> lista = null;
-        double expResult = 0.0;
+        ArrayList<String> lista = operacion;
+        double expResult = -132651;
         double result = Calcular.calcular(lista);
         assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // Test passed
     }
     
 }

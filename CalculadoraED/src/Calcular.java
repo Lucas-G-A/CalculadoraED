@@ -13,8 +13,8 @@ import java.util.ArrayList;
 public class Calcular {
     /**
      * <pre> 
-     * Esta clase pasa una cadena de una operación a notación postfija en una 
-     * lista de tipo String. Luego calcula esta lista al resultado de la operación.
+     * Esta clase pasa una cadena de una operación a notación postfija en un 
+     * ArrayList de tipo String. Luego calcula esta lista al resultado de la operación.
      * </pre> 
      */
     

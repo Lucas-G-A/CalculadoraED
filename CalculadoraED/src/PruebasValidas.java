@@ -38,7 +38,7 @@ public class PruebasValidas {
      * <li>false si sus paréntesis no están balanceados
      * </ul>
      */
-	private static boolean parentesisBalanceados(String cadena) {
+	public static boolean parentesisBalanceados(String cadena) {
             PilaA<Character> pila = new PilaA<>();
             if(cadena.length()>0) {
 		for(int i=0; i<cadena.length(); i++) {
@@ -63,7 +63,7 @@ public class PruebasValidas {
      * <li>false si tiene paréntesis consecutivos
      * </ul>
      */
-	private static boolean parentesisNoConsecutivos(String cadena) {
+	public static boolean parentesisNoConsecutivos(String cadena) {
 	    char actual;
             char siguiente;
             
