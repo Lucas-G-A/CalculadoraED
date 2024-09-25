@@ -75,7 +75,6 @@ public class VistaCalc extends javax.swing.JFrame {
 
         delAll.setBackground(new java.awt.Color(0, 102, 255));
         delAll.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        delAll.setForeground(new java.awt.Color(242, 242, 242));
         delAll.setText("AC");
         delAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +111,6 @@ public class VistaCalc extends javax.swing.JFrame {
         });
 
         delete.setBackground(new java.awt.Color(0, 102, 255));
-        delete.setForeground(new java.awt.Color(242, 242, 242));
         delete.setText("⌫");
         delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
