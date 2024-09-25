@@ -1,1 +1,1 @@
-Una calculadora de reales
+Una calculadora de reales. Ignorar dos clases afuera del folder.
