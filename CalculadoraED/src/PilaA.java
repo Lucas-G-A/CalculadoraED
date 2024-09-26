@@ -6,6 +6,7 @@
 /**
  *
  * @author lucasgarcia
+ * Defina una pila de tipo T
  */
 public class PilaA <T> implements PilaADT<T>{
     private T[] datos;

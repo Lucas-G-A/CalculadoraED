@@ -1,6 +1,7 @@
 /**
  *
  * @author eliasKalby
+ * Clase para probar que una expresion matematica es valida
  */
 public class PruebasValidas {
 	/**

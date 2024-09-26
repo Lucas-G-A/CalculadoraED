@@ -13,6 +13,7 @@ import static org.junit.Assert.*;
 /**
  *
  * @author alvar
+ * Pruebas para checar que una expresion matematica es valida
  */
 public class PruebasValidasTest {
     

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 /**
  *
  * @author lucasgarcia
+ * Clase para evaluar una expresion matematica
  */
 public class Calcular {
     /**

@@ -5,7 +5,8 @@
 
 /**
  *
- * @author edi
+ * @author alonsozama
+ * Una vista de una calculadora con operadores basicos
  */
 public class VistaCalc extends javax.swing.JFrame {
 

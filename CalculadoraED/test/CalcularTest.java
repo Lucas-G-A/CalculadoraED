@@ -14,6 +14,7 @@ import static org.junit.Assert.*;
 /**
  *
  * @author alvar
+ * Pruebas para evaluar una expresion matematica
  */
 public class CalcularTest {
     
